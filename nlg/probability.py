@@ -47,7 +47,7 @@ class Sparsemax(torch.nn.Module):
         prob = z.sub(tau_z.view(bs,1).repeat(1,dim)).clamp(min=0).type(dtype)
         return prob
 
-class Sparsegen-lin(torch.nn.Module):
+class Sparsegen_lin(torch.nn.Module):
     def __init__(self, lam, data_driven=False, normalized=True):
         super(Sparsegen-lin, self).__init__()
         self.lam = lam
@@ -137,7 +137,7 @@ class MySparseProp(torch.nn.Module):
         return prob
 '''
 
-class Sparsegen-scale(torch.nn.Module):
+class Sparsegen_scale(torch.nn.Module):
     def __init__(self, gamma, data_driven=False, normalized=True):
         super(Sparsegen-scale, self).__init__()
         self.data_driven = data_driven
@@ -182,7 +182,7 @@ class Sparsegen-scale(torch.nn.Module):
             prob /= self.lin_coeff
         return prob
 
-class Sparsegen-exp(torch.nn.Module):
+class Sparsegen_exp(torch.nn.Module):
     def __init__(self, lam=0, exp_coeff=1.0, data_driven=False, normalized=True):
         super(Sparsegen-exp, self).__init__()
         self.lam = lam
@@ -229,7 +229,7 @@ class Sparsegen-exp(torch.nn.Module):
                prob /= (1-self.lam)
         return prob
 
-class Sparsegen-sq(torch.nn.Module):
+class Sparsegen_sq(torch.nn.Module):
     def __init__(self, lam=0, data_driven=False, normalized=True):
         super(Sparsegen-sq, self).__init__()
         self.lam = lam
@@ -274,7 +274,7 @@ class Sparsegen-sq(torch.nn.Module):
                prob /= (1-self.lam)
         return prob
 
-class Sparsegen-poly(torch.nn.Module):
+class Sparsegen_poly(torch.nn.Module):
     def __init__(self, lam=0, poly=2, data_driven=False, normalized=True):
         super(Sparsegen-poly, self).__init__()
         self.lam = lam
@@ -322,7 +322,7 @@ class Sparsegen-poly(torch.nn.Module):
                prob /= (1-self.lam)
         return prob
 
-class Sparsegen-log(torch.nn.Module):
+class Sparsegen_log(torch.nn.Module):
     #Data-driven NOT ENABLED
     def __init__(self, lam=0, data_driven=False, normalized=True):
         super(Sparsegen-log, self).__init__()
